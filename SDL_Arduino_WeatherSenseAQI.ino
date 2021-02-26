@@ -16,7 +16,7 @@
 #include "MemoryFree.h"
 
 // unique ID of this WeatherSenseAQI system - change if you have multiple WeatherSenseAQI systems
-#define WEATHERSENSEAQIID 2
+#define WEATHERSENSEAQIID 1
 
 // WeatherSenseProtocol of 8 is SolarMAX LiPo   BatV < 7V
 // WeatherSenseProtocol of 10 is SolarMAX LeadAcid   BatV > 7V LoRa version
