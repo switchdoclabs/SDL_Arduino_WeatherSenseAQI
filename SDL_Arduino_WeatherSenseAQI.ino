@@ -911,7 +911,7 @@ void loop()
   }
 
 
-
+  ResetWatchdog();
 
   if (wakeState != REBOOT)
     wakeState = SLEEP_INTERRUPT;
@@ -934,13 +934,16 @@ void loop()
   // 30000 second inner loop
 
 
-  for (long j = 0; j < (nextSleepLength / 30200); ++j)
+  for (long j = 0; j < (nextSleepLength / 30400); ++j)
   {
-
+    ResetWatchdog();
     for (long i = 0; i < 30000 / 16; ++i)
+    {
       Sleepy::loseSomeTime(16);
 
-    ResetWatchdog();
+    }
+
+
 
   }
 
