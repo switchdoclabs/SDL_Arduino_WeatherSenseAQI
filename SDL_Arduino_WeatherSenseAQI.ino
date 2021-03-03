@@ -510,6 +510,13 @@ void setup()
   Serial.begin(115200);    // TXDEBUGging only
   Wire.begin();
 
+
+
+  pinMode(WATCHDOG_1, OUTPUT);
+  digitalWrite(WATCHDOG_1, HIGH);
+
+  ResetWatchdog();
+
   AuxA = 0x00;
   // turn on USB Power for power check.
 
@@ -638,10 +645,6 @@ void setup()
 
 
 
-  pinMode(WATCHDOG_1, OUTPUT);
-  digitalWrite(WATCHDOG_1, HIGH);
-
-
 
 
 
@@ -696,7 +699,7 @@ void readHM3301()
 void loop()
 {
 
-
+  ResetWatchdog();
 
   // Only send if source is SLEEP_INTERRUPT
 #if defined(TXDEBUG)
@@ -737,9 +740,10 @@ void loop()
         // State Variable
         AuxA = AuxA | 0X01;
       }
-
+      ResetWatchdog();
       delay(30000); // stablize fan
       readHM3301();
+      ResetWatchdog();
 
       // check for bad read.  If bad (all zeros) read again
 
