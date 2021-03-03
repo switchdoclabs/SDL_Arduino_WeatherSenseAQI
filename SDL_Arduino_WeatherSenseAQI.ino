@@ -216,8 +216,8 @@ float SolarPanelCurrent;
 byte AuxA;
 
 // AuxA has state information
-// coded in the long integer
-// 00000000 00000000 00000000 00000CAB
+// coded in bottom four bits of the byte
+// 0CAB
 
 // A = 1, IN3221 (Solar) Present, 0 not present
 // B = 1, HM3301 Present, 0 not present
