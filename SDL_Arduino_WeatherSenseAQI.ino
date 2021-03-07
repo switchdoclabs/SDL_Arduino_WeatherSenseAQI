@@ -507,6 +507,26 @@ void turn_off_HM3301()
 
 void setup()
 {
+
+  pinMode(LED, OUTPUT);
+
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+  delay(200);
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+  delay(200);
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+  delay(200);
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+  delay(200);
+
   Serial.begin(115200);    // TXDEBUGging only
   Wire.begin();
 
@@ -619,16 +639,7 @@ void setup()
 
 
 
-  pinMode(LED, OUTPUT);
 
-  digitalWrite(LED, HIGH);
-  delay(1000);
-  digitalWrite(LED, LOW);
-  delay(1000);
-  digitalWrite(LED, HIGH);
-  delay(1000);
-  digitalWrite(LED, LOW);
-  delay(1000);
 
   // setup initial values of variables
 
