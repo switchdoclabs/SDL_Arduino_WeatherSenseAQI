@@ -27,7 +27,7 @@
 
 #define LED 13
 // Software version
-#define SOFTWAREVERSION 1
+#define SOFTWAREVERSION 2
 
 
 // Which WeatherSense AQI Protocol Version
@@ -703,7 +703,8 @@ void readHM3301()
     }
     Serial.println("HM3301 ERROR");
   }
-  EPAAQI = get_aqi(pValue[1], pValue[2]);
+  //EPAAQI = get_aqi(pValue[1], pValue[2]);
+  EPAAQI = get_aqi(pValue[4], pValue[5]);   // Atmospheric
 
 }
 
