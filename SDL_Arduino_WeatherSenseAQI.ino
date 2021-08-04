@@ -27,7 +27,7 @@
 
 #define LED 13
 // Software version
-#define SOFTWAREVERSION 2
+#define SOFTWAREVERSION 3
 
 
 // Which WeatherSense AQI Protocol Version
@@ -413,7 +413,10 @@ int calculate_index_(uint16_t value, int array[AMOUNT_OF_LEVELS][2]) {
   int conc_lo = array[grid_index][0];
   int conc_hi = array[grid_index][1];
 
-  return ((aqi_hi - aqi_lo) / (conc_hi - conc_lo)) * (value - conc_lo) + aqi_lo;
+  //return ((aqi_hi - aqi_lo) / (conc_hi - conc_lo)) * (value - conc_lo) + aqi_lo;
+  // Thank you Gorddel!
+
+  return(((float)(aqi_hi - aqi_lo) / (float)(conc_hi - conc_lo)) * (value - conc_lo) + aqi_lo);
 
 }
 
